@@ -10,12 +10,16 @@ const addPerson = newPerson => {
 }
 
 const removePerson = (id) => {
-    axios
-    .delete(`${baseUrl}${id}`)
+    axios.delete(`${baseUrl}${id}`)
+}
+
+const updatePerson = person => {
+    return axios.put(baseUrl, person).then(response => response.data)
 }
 
 export default {
     getAll,
     addPerson,
-    removePerson
+    removePerson,
+    updatePerson
 }
